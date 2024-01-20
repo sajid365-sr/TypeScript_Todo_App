@@ -45,6 +45,7 @@
 }
 
 .todos {
+  margin-top: 2rem;
   width: 90%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -52,6 +53,7 @@
 }
 
 .todos_single {
+  width: auto;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -76,9 +78,9 @@
   cursor: pointer;
 }
 
-@media (max-width: 1200px) {
-  .todos_single {
-    width: 40%;
+@media (max-width: 1000px) {
+  .todos {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -87,10 +89,7 @@
     width: 95%;
   }
   .todos {
-    width: 75%;
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .todos_single {
-    width: 100%;
+    width: 85%;
+    grid-template-columns: 1fr;
   }
 }

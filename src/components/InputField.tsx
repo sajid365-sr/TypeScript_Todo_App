@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
+import React, { useReducer, useRef } from "react";
 import "./styles.css";
+import { TodoReducer } from "./TestReducer";
 
 interface Props {
   todo: string;
@@ -10,13 +11,17 @@ interface Props {
 const InputField: React.FC<Props> = ({ todo, setTodo, handleAdd }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
+  // const [state, dispatch] = useReducer(TodoReducer, []);
+
   return (
     <div>
       <form
         className="input"
         onSubmit={(e) => {
-          handleAdd(e);
-          inputRef.current?.blur();
+          if (todo.length !== 0) {
+            handleAdd(e);
+            inputRef.current?.blur();
+          }
         }}
       >
         <input
