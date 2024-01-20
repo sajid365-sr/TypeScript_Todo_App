@@ -43,3 +43,54 @@
   transform: scale(0.8);
   box-shadow: 0 0 5px black;
 }
+
+.todos {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.todos_single {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 15px;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjOBwuzc_JaHVRqxmsVR2bzStyMKkKAnwlBXogaQqWOg&s");
+}
+
+.todos_single_text {
+  flex: 1;
+  padding: 5px;
+  border: none;
+  font-size: 20px;
+}
+.todos_single_text:focus {
+  outline: none;
+}
+.icon {
+  margin-left: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .todos_single {
+    width: 40%;
+  }
+}
+
+@media (max-width: 700px) {
+  .input {
+    width: 95%;
+  }
+  .todos {
+    width: 75%;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .todos_single {
+    width: 100%;
+  }
+}
